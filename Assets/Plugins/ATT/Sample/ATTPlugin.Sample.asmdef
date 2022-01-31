@@ -1,0 +1,16 @@
+{
+    "name": "ATTPlugin.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ed2f45ecf29d8374b985afeb3481cd1a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
