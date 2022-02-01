@@ -1,3 +1,4 @@
+#if UNITY_IOS
 using System.IO;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -18,7 +19,11 @@ namespace ATT
             var projectPath = PBXProject.GetPBXProjectPath(buildPath);
             var pbx = new PBXProject();
             pbx.ReadFromFile(projectPath);
+#if UNITY_2019_3_OR_NEWER
             var targetGUID = pbx.GetUnityFrameworkTargetGuid();
+#else
+            var targetGUID = pbx.TargetGuidByName(PBXProject.GetUnityTargetName());
+#endif
             pbx.AddFrameworkToProject(targetGUID, "AppTrackingTransparency.framework", false);
             pbx.WriteToFile(projectPath);
 
@@ -31,3 +36,4 @@ namespace ATT
         }
     }
 }
+#endif
