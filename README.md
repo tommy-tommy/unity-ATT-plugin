@@ -1,6 +1,7 @@
 # Unity ATT Plugin
 
-This plugin implements the display of the tracking request modal in iOS.
+### This plugin implements the display of the tracking request modal in iOS.  
+<br>
 
 ![screen_shot](https://user-images.githubusercontent.com/49640196/151963131-82554eab-f419-4eb5-a417-543cd8368a5f.png)
 
@@ -11,15 +12,27 @@ Import the [unitypackage](https://github.com/tommy-tommy/unity-ATT-plugin/releas
 
 # Usage
 
-1. "GetTrackingAuthorizationStatus" to get the current authorization status.
+Use the `ATTService` class.
 
-2. If it is null, it is still in an unrequested state. Use "ATTService.RequestTrackingAuthorization" to display the request modal.
+1. `ATTService.GetTrackingAuthorizationStatus()` to get the current authorization status.
 
-<strong>No special processing is required after the build.</strong>
+2. If it is null, it is still in an unrequested state. Use `ATTService.RequestTrackingAuthorization()` to display the request modal.
+
+---
+
+A description of the usage is provided in the `ATTSettings.asset` in the `Assets/Plugins/ATT` folder.
+
+![image](https://user-images.githubusercontent.com/49640196/151977112-9c41183e-da74-40d2-9192-33c86fad5225.png)
+
+***
+**There is nothing to do after the build.**  
+***
+<br>
+
 
 ## Example
 
-```bash
+```C#
     // using ATT;
     var ret = ATTService.GetTrackingAuthorizationStatus();
     if (!ret.HasValue)
@@ -48,7 +61,7 @@ Import the [unitypackage](https://github.com/tommy-tommy/unity-ATT-plugin/releas
 
 # Requirement
 
-Confirmed to work with Unity 2018.4.36
+Confirmed to work with Unity 2019.3.9
 
 # License
 
